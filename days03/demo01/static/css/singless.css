@@ -1,0 +1,27 @@
+.author-info{
+    margin:20px 0 20px 0;
+}
+.author-info img{
+    width: 160px;
+    height: 160px;
+    border:solid 1px #ddd;
+    margin-right:30px;
+}
+.author-info .media-heading{
+    margin-top:30px;
+    margin-bottom:20px;
+}
+.text-my{
+    color:black;
+}
+.author-info ul{
+    margin-left:10px;
+}
+.author-info li{
+    width:80px;
+    border-right: solid 1px #ddd;
+}
+.author-info li:last-of-type{
+    border-right:none;
+}
+

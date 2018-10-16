@@ -1,0 +1,175 @@
+WARNING 2018-10-15 21:15:04,251 views 8340 14852 首页开始运行了……
+WARNING 2018-10-15 21:15:12,988 views 8340 14372 首页开始运行了……
+WARNING 2018-10-15 21:16:28,327 basehttp 8340 8312 "GET /static/upload/herder/6.jpg HTTP/1.1" 404 1670
+ERROR 2018-10-15 21:18:48,060 exception 8340 17908 Internal Server Error: /blog/22/author_info_editor/
+Traceback (most recent call last):
+  File "G:\1807 django\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "G:\1807 django\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "G:\1807 django\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "G:\1807 django\days03\demo01\blog\views.py", line 199, in author_info_editor
+    return render(request,"blog/author_info_editor.html",{"users": user})
+  File "G:\1807 django\lib\site-packages\django\shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "G:\1807 django\lib\site-packages\django\template\loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "G:\1807 django\lib\site-packages\django\template\backends\django.py", line 66, in render
+    return self.template.render(context)
+  File "G:\1807 django\lib\site-packages\django\template\base.py", line 207, in render
+    return self._render(context)
+  File "G:\1807 django\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "G:\1807 django\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "G:\1807 django\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "G:\1807 django\lib\site-packages\django\template\defaulttags.py", line 458, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "G:\1807 django\lib\site-packages\django\urls\base.py", line 91, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "G:\1807 django\lib\site-packages\django\urls\resolvers.py", line 497, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'author_info_editor' with arguments '('',)' not found. 1 pattern(s) tried: ['blog/(?P<a_id>\\d+)/author_info_editor/$']
+WARNING 2018-10-15 21:18:48,270 views 8340 16104 首页开始运行了……
+ERROR 2018-10-15 21:18:48,330 basehttp 8340 17908 "GET /blog/22/author_info_editor/ HTTP/1.1" 500 130632
+WARNING 2018-10-15 21:24:20,611 basehttp 8340 10072 "GET /static/upload/herder/6.jpg HTTP/1.1" 404 1670
+WARNING 2018-10-15 21:24:48,564 views 6860 3316 首页开始运行了……
+WARNING 2018-10-15 21:24:56,862 views 6860 8716 首页开始运行了……
+WARNING 2018-10-15 21:25:00,272 basehttp 6860 10540 "GET /static/upload/herder/6.jpg HTTP/1.1" 404 1670
+ERROR 2018-10-15 21:25:06,480 exception 6860 16156 Internal Server Error: /blog/22/author_info_editor/
+Traceback (most recent call last):
+  File "G:\1807 django\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "G:\1807 django\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "G:\1807 django\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "G:\1807 django\days03\demo01\blog\views.py", line 212, in author_info_editor
+    user.header = settings.MEDIA_URL+header_img
+TypeError: must be str, not InMemoryUploadedFile
+ERROR 2018-10-15 21:25:06,520 basehttp 6860 16156 "POST /blog/22/author_info_editor/ HTTP/1.1" 500 72074
+WARNING 2018-10-15 21:30:57,620 views 7672 17992 首页开始运行了……
+WARNING 2018-10-15 21:31:06,550 views 7672 16620 首页开始运行了……
+WARNING 2018-10-15 21:31:11,519 basehttp 7672 14852 "GET /static/upload/herder/6.jpg HTTP/1.1" 404 1670
+WARNING 2018-10-15 21:31:11,899 basehttp 7672 3240 "GET /static/upload/herder/6.jpg HTTP/1.1" 404 1670
+WARNING 2018-10-15 21:31:15,569 views 7672 6956 首页开始运行了……
+ERROR 2018-10-15 21:31:19,563 exception 7672 12600 Internal Server Error: /blog/22/author_info_editor/
+Traceback (most recent call last):
+  File "G:\1807 django\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "G:\1807 django\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "G:\1807 django\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "G:\1807 django\days03\demo01\blog\views.py", line 199, in author_info_editor
+    return render(request,"blog/author_info_editor.html",{"users": user})
+  File "G:\1807 django\lib\site-packages\django\shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "G:\1807 django\lib\site-packages\django\template\loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "G:\1807 django\lib\site-packages\django\template\backends\django.py", line 66, in render
+    return self.template.render(context)
+  File "G:\1807 django\lib\site-packages\django\template\base.py", line 207, in render
+    return self._render(context)
+  File "G:\1807 django\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "G:\1807 django\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "G:\1807 django\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "G:\1807 django\lib\site-packages\django\template\defaulttags.py", line 458, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "G:\1807 django\lib\site-packages\django\urls\base.py", line 91, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "G:\1807 django\lib\site-packages\django\urls\resolvers.py", line 497, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'author_info_editor' with arguments '('',)' not found. 1 pattern(s) tried: ['blog/(?P<a_id>\\d+)/author_info_editor/$']
+ERROR 2018-10-15 21:31:19,693 basehttp 7672 12600 "GET /blog/22/author_info_editor/ HTTP/1.1" 500 130633
+WARNING 2018-10-15 21:31:19,713 basehttp 7672 5840 "GET /static/upload/herder/6.jpg HTTP/1.1" 404 1670
+ERROR 2018-10-15 21:31:26,042 exception 7672 768 Internal Server Error: /blog/22/author_info_editor/
+Traceback (most recent call last):
+  File "G:\1807 django\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "G:\1807 django\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "G:\1807 django\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "G:\1807 django\days03\demo01\blog\views.py", line 212, in author_info_editor
+    user.header = "static/uepload/shangchuan/"+header_img
+TypeError: must be str, not InMemoryUploadedFile
+ERROR 2018-10-15 21:31:26,092 basehttp 7672 768 "POST /blog/22/author_info_editor/ HTTP/1.1" 500 72113
+ERROR 2018-10-15 21:34:44,559 exception 11516 6432 Internal Server Error: /blog/22/author_info_editor/
+Traceback (most recent call last):
+  File "G:\1807 django\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "G:\1807 django\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "G:\1807 django\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "G:\1807 django\days03\demo01\blog\views.py", line 199, in author_info_editor
+    return render(request,"blog/author_info_editor.html",{"users": user})
+  File "G:\1807 django\lib\site-packages\django\shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "G:\1807 django\lib\site-packages\django\template\loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "G:\1807 django\lib\site-packages\django\template\backends\django.py", line 66, in render
+    return self.template.render(context)
+  File "G:\1807 django\lib\site-packages\django\template\base.py", line 207, in render
+    return self._render(context)
+  File "G:\1807 django\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "G:\1807 django\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "G:\1807 django\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "G:\1807 django\lib\site-packages\django\template\defaulttags.py", line 458, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "G:\1807 django\lib\site-packages\django\urls\base.py", line 91, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "G:\1807 django\lib\site-packages\django\urls\resolvers.py", line 497, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'author_info_editor' with arguments '('',)' not found. 1 pattern(s) tried: ['blog/(?P<a_id>\\d+)/author_info_editor/$']
+WARNING 2018-10-15 21:34:44,699 base 11516 17212 Not Found: /blog/22/author_info/static/uepload/shangchuan/static/upload/herder/3.jpg
+WARNING 2018-10-15 21:34:44,699 basehttp 11516 17212 "GET /blog/22/author_info/static/uepload/shangchuan/static/upload/herder/3.jpg HTTP/1.1" 404 5984
+ERROR 2018-10-15 21:34:44,899 basehttp 11516 6432 "GET /blog/22/author_info_editor/ HTTP/1.1" 500 130633
+WARNING 2018-10-15 21:34:48,198 base 11516 988 Not Found: /blog/22/author_info/static/uepload/shangchuan/static/upload/herder/3.jpg
+WARNING 2018-10-15 21:34:48,198 basehttp 11516 988 "GET /blog/22/author_info/static/uepload/shangchuan/static/upload/herder/3.jpg HTTP/1.1" 404 5984
+WARNING 2018-10-15 21:35:38,536 base 11516 7572 Not Found: /blog/22/author_info/static/uepload/shangchuan/static/upload/herder/6.jpg
+WARNING 2018-10-15 21:35:38,536 basehttp 11516 7572 "GET /blog/22/author_info/static/uepload/shangchuan/static/upload/herder/6.jpg HTTP/1.1" 404 5984
+WARNING 2018-10-15 21:35:40,874 base 11516 12860 Not Found: /blog/22/author_info/static/uepload/shangchuan/static/upload/herder/6.jpg
+WARNING 2018-10-15 21:35:40,884 basehttp 11516 12860 "GET /blog/22/author_info/static/uepload/shangchuan/static/upload/herder/6.jpg HTTP/1.1" 404 5984
+WARNING 2018-10-15 21:35:41,244 base 11516 1984 Not Found: /blog/22/author_info/static/uepload/shangchuan/static/upload/herder/6.jpg
+WARNING 2018-10-15 21:35:41,254 basehttp 11516 1984 "GET /blog/22/author_info/static/uepload/shangchuan/static/upload/herder/6.jpg HTTP/1.1" 404 5984
+WARNING 2018-10-15 21:35:41,571 base 11516 13744 Not Found: /blog/22/author_info/static/uepload/shangchuan/static/upload/herder/6.jpg
+WARNING 2018-10-15 21:35:41,581 basehttp 11516 13744 "GET /blog/22/author_info/static/uepload/shangchuan/static/upload/herder/6.jpg HTTP/1.1" 404 5984
+WARNING 2018-10-15 21:35:48,962 basehttp 11516 11152 "GET /static/upload/herder/6.jpg HTTP/1.1" 404 1670
+WARNING 2018-10-15 21:35:55,858 base 11516 15328 Not Found: /blog/22/author_info/static/uepload/shangchuan/static/upload/herder/4.jpg
+WARNING 2018-10-15 21:35:55,868 basehttp 11516 15328 "GET /blog/22/author_info/static/uepload/shangchuan/static/upload/herder/4.jpg HTTP/1.1" 404 5984
+WARNING 2018-10-15 21:35:58,478 base 11516 17660 Not Found: /blog/22/author_info/static/uepload/shangchuan/static/upload/herder/4.jpg
+WARNING 2018-10-15 21:35:58,478 basehttp 11516 17660 "GET /blog/22/author_info/static/uepload/shangchuan/static/upload/herder/4.jpg HTTP/1.1" 404 5984
+WARNING 2018-10-15 21:35:59,448 base 11516 12348 Not Found: /blog/22/author_info/static/uepload/shangchuan/static/upload/herder/4.jpg
+WARNING 2018-10-15 21:35:59,458 basehttp 11516 12348 "GET /blog/22/author_info/static/uepload/shangchuan/static/upload/herder/4.jpg HTTP/1.1" 404 5984
+WARNING 2018-10-15 21:45:05,527 views 3928 13876 退出登录
+WARNING 2018-10-15 21:45:05,567 views 3928 768 首页开始运行了……
+WARNING 2018-10-15 21:45:06,467 views 3928 16964 用户登录
+WARNING 2018-10-15 21:45:14,216 views 3928 11152 用户登录
+WARNING 2018-10-15 21:45:14,226 views 3928 11152 登录成功…
+WARNING 2018-10-15 21:45:14,236 views 3928 10196 首页开始运行了……
+WARNING 2018-10-15 21:45:17,636 views 3928 15944 发表文章…
+WARNING 2018-10-15 21:45:18,666 views 3928 15688 个人主页展示…
+WARNING 2018-10-15 21:48:13,838 views 10840 10256 退出登录
+WARNING 2018-10-15 21:48:13,848 views 10840 11596 首页开始运行了……
+WARNING 2018-10-15 21:48:14,518 views 10840 13516 用户登录
+WARNING 2018-10-15 21:48:26,898 views 10840 9184 用户登录
+WARNING 2018-10-15 21:48:26,908 views 10840 9184 登录成功…
+WARNING 2018-10-15 21:48:26,918 views 10840 15188 首页开始运行了……
+WARNING 2018-10-15 21:48:30,408 views 10840 10136 首页开始运行了……
+WARNING 2018-10-15 21:48:31,508 views 10840 15088 首页开始运行了……
+WARNING 2018-10-15 21:48:32,048 views 10840 3616 首页开始运行了……
+WARNING 2018-10-15 21:48:32,668 views 10840 4872 个人主页展示…
+WARNING 2018-10-15 21:48:34,948 views 10840 7008 个人主页展示…
+WARNING 2018-10-15 21:48:38,557 views 10840 3504 个人主页展示…
+WARNING 2018-10-15 21:48:42,377 views 10840 15216 首页开始运行了……
+WARNING 2018-10-15 21:48:44,337 views 10840 4008 展示单篇文章…

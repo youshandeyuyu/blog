@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>展示用户信息</title>
+</head>
+<body>
+
+<div class="container">
+        <div class="row">
+            <div class="panel-body">
+                <table class="table table-bordered table-hover table-striped">
+                    <thead>
+                        <tr>
+                            <td colspan="2">用户信息-----{{users.nickname}}</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>用户账号：</td>
+                            <td>{{users.username}}</td>
+                        </tr>
+                        <tr>
+                            <td>用户年龄：</td>
+                            <td>{{users.age}}</td>
+                        </tr>
+                        <tr>
+                            <td>用户生日：</td>
+                            <td>{{users.birthday}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    {% load static %}
+    <link rel="stylesheet" href="/static/js/lib/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <script src="/static/js/lib/jquery2.2.4/jquery-2.2.4.min.js"></script>
+    <script src="/static/js/lib/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="/static/css/index.css">
+</head>
+<body>
+<!--网页头部导航条-->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{% url 'blog:index' %}">P站</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="{% url 'blog:index' %}"><i class="glyphicon glyphicon-home"></i> 首页 <span class="sr-only">(current)</span></a></li>
+                {% if request.session.loginUser %}
+                <li><a href="{% url 'blog:main' request.session.loginUser.id %}"><i class="glyphicon glyphicon-user"></i> 个人主页 </a></li>
+                <li><a href="{% url 'blog:article_publish' %}"><i class="glyphicon glyphicon-text-size"></i> 发表文章 </a></li>
+                {% endif %}
+                <li><a href="#"><i class="glyphicon glyphicon-comment"></i> 我的消息<i class="lable label-danger">10</i></a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="glyphicon glyphicon-tag"></i> 网站导航 <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{% url 'blog:article_publish' %}">发表文章</a></li>
+                        <li><a href="#">查看文章</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">查看喜欢的文章</a></li>
+                        <li><a href="#">查看收藏的文章</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">查看消息</a></li>
+                        <li><a href="#">最新评论</a></li>
+                        <li role="separator" class="divider"></li>
+                        {% if request.session.loginUser %}
+                        <li><a href="{% url 'blog:author_info_passwd' %}">修改登录密码</a></li>
+                        <li><a href="{% url 'blog:author_info_editor' request.session.loginUser.id %}">完善个人资料</a></li>
+                        {% else %}
+                        <li><a href="{% url 'blog:login' %}">登录/注册</a></li>
+                        {% endif %}
+                    </ul>
+                </li>
+            </ul>
+            <form class="navbar-form navbar-left">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="请输入关键词">
+                </div>
+                <button type="submit" class="btn btn-default">搜索</button>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+                {% if request.session.loginUser %}
+                    <li class="active"><a href="{% url 'blog:author_info' request.session.loginUser.id %}">{{request.session.loginUser.nickname}}</a></li>
+                    <li><a href="{% url 'blog:logout' %}">退出登录</a></li>
+                {% else %}
+                    <li><a href="{% url 'blog:register'%}"><span class="glyphicon glyphicon-tags"></span>
+                        新用户注册</a></li>
+                    <li><a href="{% url 'blog:login' %}"><span class="glyphicon glyphicon-tags"></span>
+                        会员登录</a></li>
+                {% endif %}
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+
+<!--网页头部轮播+广告-->
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+                </ol>
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" role="listbox">
+                    <div class="item active">
+                        <img src="/static/images/banel/1.jpg" alt="...">
+                        <div class="carousel-caption">
+                            广告展示信息
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="/static/images/banel/121.jpg" alt="...">
+                        <div class="carousel-caption">
+                            广告展示信息
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="/static/images/banel/1234.jpg" alt="...">
+                    </div>
+                    <div class="item">
+                        <img src="/static/images/banel/1235.jpg" alt="...">
+                    </div>
+                </div>
+
+                <!-- Controls -->
+                <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                    <span class="sr-only">上一张</span>
+                </a>
+                <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                    <span class="sr-only">下一张</span>
+                </a>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">博客推荐</div>
+                <div class="panel-body">
+                    <p>
+                        当智者拿起杖，当勇士拿起枪<br /><br />
+                        异能者浅语轻言，默默吟唱<br /><br />
+                        你心中可曾畏惧，那尸横遍野，那大战开场<br /><br />
+                        当魔魂苏醒， 当诸神震怒 人类热血激荡，圣战八荒。<br /><br />
+                        你是否就是那飞扬的旌旗，那踌躇的魔域之王？<br /><br />
+                        当流离失所， 当风云变色。世界不再是旧日模样。<br /><br />
+                        我们将为自己的梦想战斗，直到力战身亡，直至彼岸他乡<br /><br />
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--网页主体-文章+推荐-->
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="panel panel-default hot-article">
+                <div class="panel-heading">热门文章</div>
+                <ul class="list-group">
+                    {% for at in page.object_list %}
+                    <li class="list-group-item"><a href="{% url 'blog:article_single' at.id %}"><i class="label label-danger">原创</i>{{at.title}}</a><i class="badge">2000</i><a
+                            href="{% url 'blog:main' at.author.id %}">作者：{{at.author.nickname}}</a><span>{{at.publishTime}}</span></li>
+                    {% empty %}
+                    <h2>没有文章，请发表</h2>
+                    {% endfor %}
+                </ul>
+            </div>
+            <nav aria-label="Page navigation">
+              <ul class="pagination">
+
+                  {% if page.has_previous %}
+                   <li>
+                      <a href="/blog/index?pageNow={{page.previous_page_number}}" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                      </a>
+                    </li>
+                  {% endif %}
+
+                  {% for p in page.paginator.page_range %}
+                    {% if pageNow == p %}
+                        <li class="active"><a href="/blog/index/?pageNow={{p}}">{{p}}</a></li>
+                    {% elif p >= pageNow|add:'-2' and p <= pageNow|add:'2' %}
+                        <li><a href="/blog/index/?pageNow={{p}}">{{p}}</a></li>
+                    {% endif %}
+                    <!--<li><a href="/blog/index/?pageNow={{p}}">{{p}}</a></li>-->
+                  {% endfor %}
+
+                   {% if page.has_next %}
+                   <li>
+                       <a href="/blog/index?pageNow={{page.next_page_number}}" aria-label="Next">
+                           <span aria-hidden="true">&raquo;</span>
+                       </a>
+                    </li>
+                  {% endif %}
+              </ul>
+            </nav>
+        </div>
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">热门文章</div>
+                <ul class="list-group">
+                    <li class="list-group-item"><a href="#">热门文章</a></li>
+                    <li class="list-group-item"><a href="#">热门文章</a></li>
+                    <li class="list-group-item"><a href="#">热门文章</a></li>
+                    <li class="list-group-item"><a href="#">热门文章</a></li>
+                    <li class="list-group-item"><a href="#">热门文章</a></li>
+                    <li class="list-group-item"><a href="#">热门文章</a></li>
+                    <li class="list-group-item"><a href="#">热门文章</a></li>
+                </ul>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">推荐作者</div>
+                <ul class="list-group hot-author">
+                    <li class="list-group-item"><img src="/static/images/headers/1.jpg" alt="" class="img-circle"><a href="#">小李</a></li>
+                    <li class="list-group-item"><img src="/static/images/headers/2.jpg" alt="" class="img-circle"><a href="#">阿娇</a></li>
+                    <li class="list-group-item"><img src="/static/images/headers/3.jpg" alt="" class="img-circle"><a href="#">阳阳</a></li>
+                    <li class="list-group-item"><img src="/static/images/headers/4.jpg" alt="" class="img-circle"><a href="#">小孙</a></li>
+                    <li class="list-group-item"><img src="/static/images/headers/5.jpg" alt="" class="img-circle"><a href="#">阿玉</a></li>
+                    <li class="list-group-item"><img src="/static/images/headers/6.jpg" alt="" class="img-circle"><a href="#">嘉嘉</a></li>
+                    <li class="list-group-item"><img src="/static/images/headers/7.jpg" alt="" class="img-circle"><a href="#">鸭哥</a></li>
+                    <li class="list-group-item"><img src="/static/images/headers/8.jpg" alt="" class="img-circle"><a href="#">玉钰</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--网页页脚-网站备案信息+友情链接-->
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <ul class="list-inline">
+                <li><a href="#" class="text-muted">简书</a></li>
+                <li><a href="#" class="text-muted">CSDN</a></li>
+                <li><a href="#" class="text-muted">百度一下</a></li>
+                <li><a href="#" class="text-muted">360搜</a></li>
+                <li><a href="#" class="text-muted">搜狐博客</a></li>
+                <li><a href="#" class="text-muted">新浪微博</a></li>
+                <li><a href="#" class="text-muted">天涯论坛</a></li>
+                <li><a href="#" class="text-muted">哔哩哔哩</a></li>
+                <li><a href="#" class="text-muted">知乎</a></li>
+                <li><a href="#" class="text-muted">啪啦啪啦</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 text-muted">
+            <p>
+                版权所有&copy;翻版必究
+            </p>
+            <p>
+                增值电信业务经营许可证B2-20090108　电信与信息服务业务经营许可证000007号
+            </p>
+            <p>
+                广播电视节目制作经营许可证（京）字第828号 甲测资字1100078 京公网安备11000002000016号
+            </p>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
